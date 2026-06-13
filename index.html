@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Shang Experience ✨</title>
+<title>The MeiMei Experience ✨</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -89,7 +89,6 @@ body::after{content:'';position:fixed;inset:0;background:radial-gradient(1px 1px
 #fn{font-family:'Playfair Display',serif;font-size:clamp(2rem,6vw,4rem);color:#f472b6;letter-spacing:.18em;text-shadow:0 0 40px rgba(244,114,182,.45);margin:.5rem 0;opacity:0;transition:opacity 1.5s ease}
 #fn.vis{opacity:1}
 
-/* LETTER */
 #loverlay{display:none;position:fixed;inset:0;background:rgba(5,3,16,.94);z-index:2000;align-items:center;justify-content:center;padding:1.5rem}
 #loverlay.on{display:flex}
 #env{cursor:pointer;text-align:center}
@@ -128,7 +127,7 @@ body::after{content:'';position:fixed;inset:0;background:radial-gradient(1px 1px
 <!-- S0 OPENING -->
 <div class="scr on" id="s0">
   <div style="max-width:580px">
-    <span class="ql" id="ql1">Hi Shang.</span>
+    <span class="ql" id="ql1">Hi MeiMei.</span>
     <span class="ql" id="ql2">Someone spent way too much time making this.</span>
     <span class="ql pink" id="ql3">Unfortunately for you, you're the reason why.</span>
     <br>
@@ -148,7 +147,7 @@ body::after{content:'';position:fixed;inset:0;background:radial-gradient(1px 1px
 <!-- S2 UNIVERSE -->
 <div class="scr" id="s2">
   <div class="ct">Chapter II — Create</div>
-  <p class="mg">What should we create today, Shang?</p>
+  <p class="mg">What should we create today, MeiMei?</p>
   <div class="ug">
     <button class="ub" onclick="createUni('star')">⭐ A Star</button>
     <button class="ub" onclick="createUni('moon')">🌙 A Moon</button>
@@ -247,7 +246,7 @@ body::after{content:'';position:fixed;inset:0;background:radial-gradient(1px 1px
   <canvas id="cc"></canvas>
   <div style="max-width:540px">
     <div class="ft" id="ft1">Out of billions of people...</div>
-    <div id="fn">SHANG</div>
+    <div id="fn">MEIMEI</div>
     <div class="ft" id="ft2">You're the one this website was made for.</div>
     <div class="ft" id="ft3" style="color:#f9a8d4;font-style:italic">Thanks for visiting your corner of the universe. 🌸</div>
     <button class="btn" style="margin-top:1.8rem" onclick="openLetter()">💌 Open your letter</button>
@@ -319,7 +318,7 @@ function initFlower(){
   for(var i=0;i<8;i++){var p=document.createElement('div');p.className='pt';p.style.transform='rotate('+i*45+'deg) translateX(-25px) translateY(-75px) scaleY(0)';w.appendChild(p);}
   var fq=document.getElementById('fq');fq.style.opacity='0';fq.textContent='';
 }
-var fM=['Most flowers bloom because of sunlight. This one blooms because you clicked it.','See? You have power over beautiful things.','One more time... go on, Shang.'];
+var fM=['Most flowers bloom because of sunlight. This one blooms because you clicked it.','See? You have power over beautiful things.','One more time... go on, MeiMei.'];
 function clickFlower(){
   fc++;
   var pts=document.querySelectorAll('.pt'),fcE=document.getElementById('fc'),fq=document.getElementById('fq');
@@ -337,7 +336,7 @@ function clickFlower(){
 }
 
 // UNIVERSE
-var uR={star:'Interesting choice, Shang. A star — just like you, it gives off light even when it doesn\'t try to.',moon:'The moon. Patient, constant, beautiful. It shows up every single night without being asked.',galaxy:'A galaxy. Millions of worlds, and you\'re curious about all of them. That tracks.',dream:'A dream. The best things always start exactly like that.'};
+var uR={star:'Interesting choice, MeiMei. A star — just like you, it gives off light even when it doesn\'t try to.',moon:'The moon. Patient, constant, beautiful. It shows up every single night without being asked.',galaxy:'A galaxy. Millions of worlds, and you\'re curious about all of them. That tracks.',dream:'A dream. The best things always start exactly like that.'};
 function createUni(type){
   var c=document.getElementById('uc');c.width=c.offsetWidth||540;c.height=240;
   var x=c.getContext('2d'),cx=c.width/2,cy=c.height/2;x.clearRect(0,0,c.width,c.height);
@@ -388,12 +387,14 @@ function moonClick(e){mc++;burst(e.clientX,e.clientY,'#fde68a');if(mc>=5)showHin
 function initFinale(){
   var c=document.getElementById('cc');c.width=c.offsetWidth||660;c.height=200;
   var x=c.getContext('2d');
-  var ld={S:[[0,0],[1,0],[1,.5],[0,.5],[0,1],[1,1]],H:[[0,0],[0,1],[0,.5],[1,.5],[1,0],[1,1]],A:[[0,1],[.5,0],[1,1],[.18,.62],[.82,.62]],N:[[0,1],[0,0],[1,1],[1,0]],G:[[1,.15],[.5,0],[0,.2],[0,.8],[.5,1],[1,.85],[1,.5],[.55,.5]]};
-  var letters='SHANG',lw=44,lh=66,totalW=letters.length*(lw+16)-16,sx=(c.width-totalW)/2,prog=0;
+  var ld={M:[[0,1],[0,0],[.5,.5],[1,0],[1,1]],E:[[1,0],[0,0],[0,.5],[.7,.5],[0,.5],[0,1],[1,1]],I:[[.2,0],[.8,0],[.5,0],[.5,1],[.2,1],[.8,1]]};
+  var word='MEIMEI';
+  var lmap={M:[[0,1],[0,0],[.5,.5],[1,0],[1,1]],E:[[1,0],[0,0],[0,.5],[.7,.5],[0,.5],[0,1],[1,1]],I:[[.3,0],[.7,0],[.5,0],[.5,1],[.3,1],[.7,1]]};
+  var lw=36,lh=66,gap=14,totalW=word.length*(lw+gap)-gap,sx=(c.width-totalW)/2,prog=0;
   function draw(){
     x.clearRect(0,0,c.width,c.height);
     for(var i=0;i<90;i++){var bx=Math.sin(i*137.5)*(c.width/2)+c.width/2,by=Math.cos(i*137.5)*(c.height/2)+c.height/2;x.beginPath();x.arc(bx,by,.7,0,Math.PI*2);x.fillStyle='rgba(255,255,255,.18)';x.fill();}
-    for(var li=0;li<letters.length;li++){var ltr=ld[letters[li]],ox=sx+li*(lw+16),oy=(c.height-lh)/2,lp=Math.max(0,Math.min(1,(prog*letters.length-li))),vis=Math.ceil(ltr.length*lp);x.beginPath();for(var pi=0;pi<vis;pi++){var px=ox+ltr[pi][0]*lw,py=oy+ltr[pi][1]*lh;if(pi===0)x.moveTo(px,py);else x.lineTo(px,py);}x.strokeStyle='rgba(244,114,182,.6)';x.lineWidth=1.5;x.stroke();for(var di=0;di<vis;di++){var dpx=ox+ltr[di][0]*lw,dpy=oy+ltr[di][1]*lh;x.beginPath();x.arc(dpx,dpy,3,0,Math.PI*2);x.fillStyle='rgba(244,114,182,.95)';x.fill();}}
+    for(var li=0;li<word.length;li++){var ltr=lmap[word[li]],ox=sx+li*(lw+gap),oy=(c.height-lh)/2,lp=Math.max(0,Math.min(1,(prog*word.length-li))),vis=Math.ceil(ltr.length*lp);x.beginPath();for(var pi=0;pi<vis;pi++){var px=ox+ltr[pi][0]*lw,py=oy+ltr[pi][1]*lh;if(pi===0)x.moveTo(px,py);else x.lineTo(px,py);}x.strokeStyle='rgba(244,114,182,.6)';x.lineWidth=1.5;x.stroke();for(var di=0;di<vis;di++){var dpx=ox+ltr[di][0]*lw,dpy=oy+ltr[di][1]*lh;x.beginPath();x.arc(dpx,dpy,3,0,Math.PI*2);x.fillStyle='rgba(244,114,182,.95)';x.fill();}}
     if(prog<1){prog+=.013;requestAnimationFrame(draw);}
   }
   draw();
@@ -424,7 +425,7 @@ function openEnvelope(){
     lp.style.transition='opacity .7s,transform .7s';
     setTimeout(function(){
       lp.style.opacity='1';lp.style.transform='translateY(0)';
-      var txt="Hi Shang,\n\nThis is Xhua.\n\nI like you very much and I think we could lowkey work. :P\n\nI made every single bit of this website for you.\nEvery flower, every butterfly, every wish on that tree — all of it was for you.\n\nHope it made you smile, even just a little.";
+      var txt="Hi MeiMei,\n\nThis is Xhua.\n\nI like you very much and I think we could lowkey work. :P\n\nI made every single bit of this website for you.\nEvery flower, every butterfly, every wish on that tree — all of it was for you.\n\nHope it made you smile, even just a little.";
       var body=document.getElementById('lbody'),idx=0;
       body.textContent='';
       var timer=setInterval(function(){
